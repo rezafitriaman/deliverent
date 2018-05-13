@@ -28,6 +28,7 @@
 		display: flex;
 		justify-content: flex-end;
 		margin-bottom: 0px;
+		height: 100%;
 		.fa-question-circle {
 			margin-right: 5px;
 		}
@@ -41,11 +42,7 @@
 }
 
 .navbar {
-	background: #b84d9d; /* Old browsers */
-	background: -moz-linear-gradient(left, #b84d9d 0%, #875eaa 45%, #6f67b0 57%, #4375ba 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(left, #b84d9d 0%,#875eaa 45%,#6f67b0 57%,#4375ba 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to right, #b84d9d 0%,#875eaa 45%,#6f67b0 57%,#4375ba 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b84d9d', endColorstr='#4375ba',GradientType=1 ); /* IE6-9 */
+	@extend %gradient;
 	
 	.navbar-toggler {
 		border-color: #b24f9f00;
@@ -123,7 +120,7 @@
 	overflow: hidden;
 	height: 100vh;
 	margin-bottom: 0rem;
-	background-image: url("../img/bg-front.jpg");
+	background-image: url("../img/front.jpeg");
 	background-size: cover;
 	background-attachment: fixed;
 	position: relative;
@@ -141,11 +138,7 @@
 	    transition: all .3s ease;
 	}
 	.btn:hover {
-		background: #b84d9d; /* Old browsers */
-		background: -moz-linear-gradient(left, #b84d9d 0%, #875eaa 45%, #6f67b0 57%, #4375ba 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(left, #b84d9d 0%,#875eaa 45%,#6f67b0 57%,#4375ba 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to right, #b84d9d 0%,#875eaa 45%,#6f67b0 57%,#4375ba 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b84d9d', endColorstr='#4375ba',GradientType=1 ); /* IE6-9 */
+		@extend %gradient;
 		background-position:194px;
 	}
 	.wrapper-google-btn {
@@ -185,7 +178,101 @@
 }
 
 .youtube {
+	@extend %gradient;
+	height: 100vh;
+}
 
+.icons {
+	padding-top: 70px;
+    padding-bottom: 70px;
+	.three {
+		padding-left : 0px;
+		li {
+			list-style-type: none;
+		}
+		.title {
+			color: #0071bc;
+		}
+	}
+}
+
+.about {
+	@extend %gradient;
+	color: white;
+	.wrapper-first {
+		margin: 40px 0 0;
+	}
+	.wrapper-second {
+    	margin: 40px 0;
+	}
+	.wrapper-third {
+		height: 100%;
+		.background {
+			background-image: url("../img/empty.png");
+			background-size: cover;
+			height: 100%;
+			background-position: center;
+		}
+	}
+}
+
+.social-cont {
+	background: linear-gradient(to right, #b84d9d 20%, #875eaa 40%, #6f67b0 65%, #4375ba 90%);
+	min-height: 400px;
+	.socials {
+		padding-left: 0px;
+		color: white;
+		list-style-type: none;
+		.social {
+			display: inline-block;
+			position: relative;
+			bottom: 0px;
+			transition: all .3s ease;
+		}
+		.social:hover {
+			bottom: 10px;
+		}
+		a {
+			color: white;
+		}
+	}
+	.wrapper-google-btn {
+		position: relative;
+	    bottom: 0px;
+	    transition: all .3s ease;
+		.google-btn {
+			width: 200px;
+		    display: block;
+		    text-align: center;
+		    margin: 0 auto;
+		    z-index: 2;
+		    position: relative;
+		    margin-top: 30px;
+		}
+	}
+	.wrapper-google-btn:hover {
+		bottom: 10px;
+		position: relative;
+	}
+}
+
+footer {
+	.navbar-brand {
+		margin-right: 0.5rem;
+	}
+	.pipe {
+		display: block;
+	    height: 12px;
+	    width: 2px;
+	    background-color: white;
+	    margin-right: 0.5rem;
+	    position: relative;
+	    top: 4px;
+	}
+	.mb-0 {
+		position: relative;
+		top: 3px;
+	}
 }
 
 /* Extra Small Devices, Phones */ 
@@ -193,11 +280,40 @@
 	.display-4 {
 	    font-size: 1.5rem;
 	}
+	footer .pipe {
+		display: none;
+	}
+	footer .mb-0 {
+		display: none;
+	}
 }
 
 /* Small Devices, Tablets */
 @media (min-width:480px) and (max-width : 768px) {
 	.jumbotron .wrapper-google-btn .google-btn {
 		margin-top: 15px;
+	}
+}
+
+/* md and down */
+@media only screen and (max-width : 991px) {
+	.about .wrapper-third {
+		padding-bottom: 40px;
+	}
+	.about .wrapper-third .background {
+		height: 400px;
+	}
+}
+
+/* md and up */
+@media only screen and (min-width : 991px) {
+	.about .container-fluid {
+		min-height: 700px;
+		.row {
+			min-height: 700px;
+			div:last-child {
+				padding-right: 0;
+			}
+		}
 	}
 }
