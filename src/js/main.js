@@ -43,7 +43,6 @@ $( document ).ready(function() {
 		for (var i = 0; i < target.length; i++) {
 			target[i].addEventListener('click', function() {
 				var items = this.parentNode.getElementsByClassName('nav-item');
-				console.log(this.parentNode.getElementsByClassName('nav-item'));
 				for (var j = 0; j < items.length; j++) {
 					items[j].classList.remove('active')
 				}
