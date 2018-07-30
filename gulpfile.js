@@ -23,7 +23,7 @@ gulp.task('concat', function() {
 	    "fontawesome-all.min",
 	    "main.js"
 	  ]))
-  	.pipe(uglify())
+  	/*.pipe(uglify())*/
     .pipe(concat('all.js'))
     .pipe(gulp.dest('public/js'))
     .pipe(reload({stream:true}));
